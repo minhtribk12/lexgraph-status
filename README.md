@@ -6,12 +6,12 @@ Uptime monitor and status page for [LexGraph](https://lexgraph.dev) -- EU AI Act
 
 ## Monitored Endpoints
 
-| Service | Description | Check Interval |
-|---------|-------------|---------------|
-| API Health | Liveness check (`/v1/health`) | Every 5 minutes |
-| API Readiness | Dependency health (`/v1/ready`) | Every 5 minutes |
-| Website | Landing page (`lexgraph.dev`) | Every 5 minutes |
-| API Docs | Swagger UI (`api.lexgraph.dev/docs`) | Every 5 minutes |
+| Service       | Description                          | Check Interval  |
+| ------------- | ------------------------------------ | --------------- |
+| API Health    | Liveness check (`/v1/health`)        | Every 5 minutes |
+| API Readiness | Dependency health (`/v1/ready`)      | Every 5 minutes |
+| Website       | Landing page (`lexgraph.dev`)        | Every 5 minutes |
+| API Docs      | Swagger UI (`api.lexgraph.dev/docs`) | Every 5 minutes |
 
 ## How It Works
 
