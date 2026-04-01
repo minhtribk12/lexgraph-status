@@ -1,36 +1,128 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# =============================================================================
+# LexGraph Status Page -- Upptime Configuration
+# =============================================================================
+#
+# Upptime is a GitHub Actions-based uptime monitor and status page.
+# It uses GitHub Actions for scheduled checks, GitHub Issues for incident
+# tracking, and GitHub Pages for the static status page.
+#
+# -----------------------------------------------------------------------------
+# SETUP GUIDE
+# -----------------------------------------------------------------------------
+#
+# 1. Create the GitHub repository
+#    - Go to https://github.com/upptime/upptime and click "Use this template"
+#    - Owner: minhtribk12
+#    - Repository name: lexgraph-status
+#    - Set visibility to Public (required for free GitHub Pages)
+#    - IMPORTANT: Check "Include all branches" when creating from template
+#
+# 2. Copy this file into the new repo
+#    - Copy this file as .upptimerc.yml (note the leading dot) at the repo root
+#    - Commit and push to the master/main branch
+#
+# 3. Enable GitHub Pages
+#    - Go to Settings > Pages in the new repository
+#    - Source: Deploy from a branch
+#    - Branch: gh-pages / root
+#    - Save -- the first deploy will be triggered by Upptime workflows
+#
+# 4. Set up the custom domain (status.lexgraph.dev)
+#    - In your DNS provider, add a CNAME record:
+#        status.lexgraph.dev -> minhtribk12.github.io
+#    - In the repo Settings > Pages, enter "status.lexgraph.dev" as custom domain
+#    - Check "Enforce HTTPS" once DNS propagation completes
+#
+# 5. Configure repository permissions
+#    - Go to Settings > Actions > General
+#    - Under "Workflow permissions", select "Read and write permissions"
+#    - This allows Upptime workflows to commit uptime data and update the page
+#
+# 6. Secrets (optional)
+#    - No secrets are required for basic public URL monitoring
+#    - If you want to monitor private/authenticated endpoints, add the URL as a
+#      repository secret and reference it with $SECRET_NAME in the sites config
+#    - For notifications (Slack, email, etc.), add the relevant webhook URLs
+#      as repository secrets and configure the "notifications" section below
+#
+# 7. Verify
+#    - After pushing .upptimerc.yml, GitHub Actions workflows will run automatically
+#    - Check the Actions tab to confirm workflows execute successfully
+#    - The status page should be live at https://status.lexgraph.dev within minutes
+#
+# -----------------------------------------------------------------------------
+# NOTE ON CHECK FREQUENCY
+# -----------------------------------------------------------------------------
+# Upptime does not support per-site check intervals. All endpoints are checked
+# on the same global schedule defined by workflowSchedule.uptime. The minimum
+# interval is 5 minutes (GitHub Actions limitation). The API Docs endpoint is
+# included in the same 5-minute cycle since a per-endpoint 15-minute interval
+# is not configurable. This is acceptable as the docs endpoint is lightweight.
+# =============================================================================
+
+owner: minhtribk12
+repo: lexgraph-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: API Health
+    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v1/health
+    method: GET
+    expectedStatusCodes:
+      - 200
+
+  - name: API Readiness
+    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v1/ready
+    method: GET
+    expectedStatusCodes:
+      - 200
+
+  - name: Website
+    url: https://lexgraph.dev
+    method: GET
+    expectedStatusCodes:
+      - 200
+
+  - name: API Docs
+    url: https://api.lexgraph.dev/docs
+    method: GET
+    expectedStatusCodes:
+      - 200
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.lexgraph.dev
+  name: LexGraph Status
+  theme: dark
+  introTitle: "**LexGraph** is up and running"
+  introMessage: Real-time monitoring for LexGraph API, website, and documentation. Powered by [Upptime](https://github.com/upptime/upptime).
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: API Docs
+      href: https://api.lexgraph.dev/docs
+    - title: Website
+      href: https://lexgraph.dev
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+  css: |
+    :root {
+      --accent: #64ffda;
+    }
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+
+# Assign GitHub users to be notified on downtime issues
+assignees:
+  - minhtribk12
+
+# Uncomment and configure to enable notifications:
+# notifications:
+#   - type: slack
+#     url: $SLACK_WEBHOOK_URL
+#   - type: email
+#     to: your-email@example.com
