@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 3260,
-    "timeDay": 3352,
-    "timeWeek": 3260,
-    "timeMonth": 3260,
-    "timeYear": 3260,
+    "time": 2548,
+    "timeDay": 411,
+    "timeWeek": 2548,
+    "timeMonth": 2548,
+    "timeYear": 2548,
     "dailyMinutesDown": {}
   },
   {
@@ -28,11 +28,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 629,
-    "timeDay": 627,
-    "timeWeek": 629,
-    "timeMonth": 629,
-    "timeYear": 629,
+    "time": 547,
+    "timeDay": 300,
+    "timeWeek": 547,
+    "timeMonth": 547,
+    "timeYear": 547,
     "dailyMinutesDown": {}
   },
   {
@@ -46,11 +46,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 217,
-    "timeDay": 207,
-    "timeWeek": 217,
-    "timeMonth": 217,
-    "timeYear": 217,
+    "time": 223,
+    "timeDay": 239,
+    "timeWeek": 223,
+    "timeMonth": 223,
+    "timeYear": 223,
     "dailyMinutesDown": {}
   },
   {
@@ -59,18 +59,19 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.lexgraph.dev.ico",
     "slug": "api-docs",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 769,
-    "timeDay": 796,
-    "timeWeek": 769,
-    "timeMonth": 769,
-    "timeYear": 769,
+    "uptime": "82.23%",
+    "uptimeDay": "71.21%",
+    "uptimeWeek": "82.23%",
+    "uptimeMonth": "82.23%",
+    "uptimeYear": "82.23%",
+    "time": 701,
+    "timeDay": 552,
+    "timeWeek": 701,
+    "timeMonth": 701,
+    "timeYear": 701,
     "dailyMinutesDown": {
-      "2026-04-02": 0
+      "2026-04-03": 127,
+      "2026-04-02": 287
     }
   }
 ]
