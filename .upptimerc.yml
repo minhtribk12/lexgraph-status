@@ -82,8 +82,8 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: API Docs
-    url: https://api.lexgraph.dev/docs
+  - name: Documentation
+    url: https://lexgraph.dev/docs
     method: GET
     expectedStatusCodes:
       - 200
@@ -97,8 +97,8 @@ status-website:
   navbar:
     - title: Status
       href: /
-    - title: API Docs
-      href: https://api.lexgraph.dev/docs
+    - title: Docs
+      href: https://lexgraph.dev/docs
     - title: Website
       href: https://lexgraph.dev
 
