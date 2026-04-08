@@ -1,7 +1,7 @@
 url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v1/ready
-status: down
-code: 502
-responseTime: 1170
-lastUpdated: 2026-04-08T20:08:01.827Z
+status: up
+code: 200
+responseTime: 163
+lastUpdated: 2026-04-08T21:02:13.055Z
 startTime: 2026-04-01T11:13:52.954Z
 generator: Upptime <https://github.com/upptime/upptime>
