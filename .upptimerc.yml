@@ -65,13 +65,13 @@ repo: lexgraph-status
 
 sites:
   - name: API Health
-    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v1/health
+    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v2/health
     method: GET
     expectedStatusCodes:
       - 200
 
   - name: API Readiness
-    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v1/ready
+    url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v2/ready
     method: GET
     expectedStatusCodes:
       - 200
