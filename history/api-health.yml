@@ -1,7 +1,7 @@
 url: https://y7m2e2646pdvuzjgsalqkh7yya0jkstc.lambda-url.eu-central-1.on.aws/v2/health
-status: up
-code: 200
-responseTime: 418
-lastUpdated: 2026-04-11T23:26:18.433Z
+status: down
+code: 404
+responseTime: 3867
+lastUpdated: 2026-04-12T08:07:30.003Z
 startTime: 2026-04-01T11:13:49.395Z
 generator: Upptime <https://github.com/upptime/upptime>
